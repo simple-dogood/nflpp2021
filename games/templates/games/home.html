@@ -141,23 +141,69 @@
 
 
 </br>
-</br>
 
-<h4 style="padding-left:0px;">Make Selections</h4>
+
 
 <form method="post" style="float: left; padding-right:10px; padding-bottom:25px; font-size:13px">
 {% csrf_token %}
+
+<h4 style="padding-left:0px;">Make Selections</h4>
 
 <table border = "0">
 
   <tbody>
     <tr>
       <td>Player</td>
-      <td><select class="select_field_class" name="player" id="player"></select>
-        <option></option>
+      <td><select class="select_field_class" name="player" id="player">
+        <option value="Danna">Danna</option>
+        <option value="Craft">Craft</option>
+        <option value="Lee">Lee</option>
+        <option value="McGill">McGill</option>
+        <option value="Leo">Leo</option>
+        <option value="Bdoc">Bdoc</option>
+
+      </select>
 
       </td>
-      
+
+    </tr>
+<br>
+    <tr>
+      <td>Game</td>
+      <td>
+        <select class="select_field_class" name="game" id="game">
+        <option value="SaintsBears">Saints/Bears</option>
+        <option value="SeahawksRams">Seahawks/Rams</option>
+        <option value="Washington vs. Bucs">Washington/Bucs</option>
+        <option value="BillsColts">Bills/Colts</option>
+        <option value="SteelersBrowns">Steelers/Browns</option>
+        <option value="TitansRavens">Titans/Ravens</option>
+        </select>
+
+      </td>
+
+    </tr>
+<br>
+    <tr>
+      <td>Pick</td>
+      <td><select class="select_field_class" name="pick" id="pick">
+        <option value="Saints">Saints</option>
+        <option value="Bears">Bears</option>
+        <option value="Seahawks">Seahawks</option>
+        <option value="Rams">Rams</option>
+        <option value="Washington">Washington</option>
+        <option value="Bucs">Bucs</option>
+        <option value="Bills">Bills</option>
+        <option value="Colts">Colts</option>
+        <option value="Steelers">Steelers</option>
+        <option value="Browns">Browns</option>
+        <option value="Titans">Titans</option>
+        <option value="Ravens">Ravens</option>
+
+      </select>
+
+      </td>
+<br>
     </tr>
   </tbody>  
 </table>
@@ -180,7 +226,25 @@
 
 
 <h4 style="float: left;">Current Picks</h4>
+<br>
+  <div class="table-responsive" style="width: 90%; position:center;font-size:13px">
 
+          <table class="table table-striped table-sm" >
+  <tbody>
+    <thead>
+      <th>Player</th>
+      <th>Game</th>
+      <th>Pick</th>
+    </thead>
+    {% for p in picks.all %}
+  <tr>
+    <td>{{p.player}}</td>
+    <td>{{p.game}}</td>
+    <td>{{p.pick}}</td>
+  </tr>
+    {% endfor %}
 
-
+</tbody>
+</table>
+</div>
 </main>
