@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import gameForm
 from .models import Selections
 from django_pandas.io import read_frame
+import pandas as pd
 
 def lastPick(x):
 	picks = Selections.objects.filter(player=x).order_by('created')
@@ -20,7 +21,7 @@ def home(request):
 		newForm = form.save(commit=False)
 		newForm.save()
 
-		player_list = ['Bdoc']
+		player_list = ['Bdoc','Danna','Craft','Leo','McGill','Lee']
 		full_list = []
 		for p in player_list:
 			full_list.append(lastPick(p))
@@ -28,7 +29,9 @@ def home(request):
 		data = Selections.objects.all()
 		data.delete()
 
-		row_flow = full_list[0].iterrows()
+		final_frame = pd.concat([full_list[0],full_list[1],full_list[2],full_list[3],full_list[4],full_list[5]]).reset_index(drop=True)
+
+		row_flow = final_frame.iterrows()
 
 		objs2 = [
 			Selections(
