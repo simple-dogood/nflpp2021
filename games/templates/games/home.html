@@ -138,20 +138,16 @@
   </div>
 
 
-
-
-</br>
-
-
-
-<form method="post" style="float: left; padding-right:10px; padding-bottom:25px; font-size:13px">
+ 
+<div class="table-responsive" style="width: 90%; position:center;font-size:13px">
+<form method="post" style="float: left; font-size:13px">
 {% csrf_token %}
 
-<h4 style="padding-left:0px;">Make Selections</h4>
-
-<table border = "0">
+<table class="table-sm" >
 
   <tbody>
+    <thead><th><h5>Make Selections</h5></th></thead>
+   
     <tr>
       <td>Player</td>
       <td><select class="select_field_class" name="player" id="player">
@@ -210,19 +206,10 @@
 </br>
 <button type="submit" >Submit</button>
 </form>
+</div>
 
-
-
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
+<br>
+<br>
 
 
 <h4 style="float: left;">Current Picks</h4>
