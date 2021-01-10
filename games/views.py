@@ -12,7 +12,7 @@ def lastPick(x):
 def home(request):
 
 	if request.method == 'GET':
-		return render(request,'games/home.html',{'form':gameForm})
+		return render(request,'games/home.html',{'form':gameForm,'picks':picks})
 	elif request.method=='POST':
 		form = gameForm(request.POST)
 		print(request.POST.get('player'))
