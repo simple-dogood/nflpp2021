@@ -9,7 +9,7 @@ class Selections(models.Model):
 	# total = models.FloatField(default=0,blank=True)
 	created = models.DateTimeField(auto_now_add=True)
 	g_id = str(player)+"_"+str(game) 
-	holder = models.CharField(max_length=50,default='hold')
+	#holder = models.CharField(max_length=50,default='hold')
 
 
 class Standings(models.Model):
