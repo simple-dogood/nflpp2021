@@ -4,7 +4,7 @@ class Selections(models.Model):
 	player = models.CharField(max_length=50)
 	game = models.CharField(max_length=50)
 	pick = models.CharField(max_length=50)
-	# 	ou = models.CharField(max_length=30)
+	ou = models.CharField(max_length=30)
 	# line = models.FloatField(default=0,blank=True)
 	# total = models.FloatField(default=0,blank=True)
 	created = models.DateTimeField(auto_now_add=True)

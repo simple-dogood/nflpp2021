@@ -5,4 +5,4 @@ from .models import Selections
 class gameForm(ModelForm):
 	class Meta:
 		model = Selections
-		fields = ['player','game','pick']
+		fields = ['player','game','pick','ou']

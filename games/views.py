@@ -19,6 +19,7 @@ def home(request):
 		print(request.POST.get('player'))
 		print(request.POST.get('game'))
 		print(request.POST.get('pick'))
+		print(request.POST.get('ou'))
 		newForm = form.save(commit=False)
 		newForm.save()
 
@@ -40,6 +41,7 @@ def home(request):
         		game = row['game'],
         		pick = row['pick'],
         		created = row['created'],
+        		ou = row['ou'],
 
 	    	)
 
